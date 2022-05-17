@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let computerScore = 0;
+        let playerScore = 0;
+
+        function playRound(playerSelection, computerSelection) {
+            let message = "";
+
+            if(playerSelection.toLowerCase() == computerSelection) {
+                return "Draw! Both chose " + computerSelection.toUpperCase() + ". No player scores point.";
+            }
+
+            if(playerSelection.toLowerCase() == "rock") {
+                if(computerSelection == "scissors") {
+                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
+                    playerScore += 1;
+                    return(message);
+                }
+                else {
+                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
+                    computerScore += 1;
+                    return (message);
+                }
+            }
+            else if(playerSelection.toLowerCase() == "scissors") {
+                if(computerSelection == "rock") {
+                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
+                    computerScore += 1;
+                    return(message);
+                }
+                else {
+                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
+                    playerScore += 1;
+                    return(message);
+                }
+            }
+            else {
+                if(computerSelection == "rock") {
+                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
+                    playerScore += 1;
+                    return(message);
+                }
+                else {
+                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
+                    computerScore += 1;
+                    return message;
+                }
+            }
+        }
+
+        function computerPlay() {
+            let index;
+            index = (Math.random() * 10) % 3; 
+
+            if(index < 1){ 
+                return "rock"
+            }
+            else if (index < 2) {
+                return "paper"
+            }
+            else {
+                return "scissors"
+            }
+            
+        }
+
+        function game() {
+            let userInput;
+            let computerChoice;
+            for (let i = 0; i < 5; i++) {
+                userInput = prompt("Enter your choice: ");
+                computerChoice = computerPlay();
+                console.log(playRound(userInput, computerChoice));
+            }
+
+            let message = "";
+            if(playerScore == computerScore) {
+                message = "Game Draw! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
+                console.log(message);
+            }
+            else if (playerScore > computerScore) {
+                message = "Player Wins! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
+                console.log(message);
+            }
+            else {
+                message = "Computer Wins! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
+                console.log(message);
+            }
+
+        }
+
+        game()
+    </script>
+    
+</body>
+</html>
