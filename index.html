@@ -4,101 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>D</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <script>
-        let computerScore = 0;
-        let playerScore = 0;
 
-        function playRound(playerSelection, computerSelection) {
-            let message = "";
+    <div class="header">
+        <h1>ROCK PAPER SCISSORS</h1>
+    </div>
 
-            if(playerSelection.toLowerCase() == computerSelection) {
-                return "Draw! Both chose " + computerSelection.toUpperCase() + ". No player scores point.";
-            }
+    <div class ="container">
 
-            if(playerSelection.toLowerCase() == "rock") {
-                if(computerSelection == "scissors") {
-                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
-                    playerScore += 1;
-                    return(message);
-                }
-                else {
-                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
-                    computerScore += 1;
-                    return (message);
-                }
-            }
-            else if(playerSelection.toLowerCase() == "scissors") {
-                if(computerSelection == "rock") {
-                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
-                    computerScore += 1;
-                    return(message);
-                }
-                else {
-                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
-                    playerScore += 1;
-                    return(message);
-                }
-            }
-            else {
-                if(computerSelection == "rock") {
-                    message = "You Win! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + ". Player Score +1";
-                    playerScore += 1;
-                    return(message);
-                }
-                else {
-                    message = "You Lose! " + computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase() + ". Computer Score +1";
-                    computerScore += 1;
-                    return message;
-                }
-            }
-        }
+        <div class="compete">
 
-        function computerPlay() {
-            let index;
-            index = (Math.random() * 10) % 3; 
+            <div class="Y-choice">
+                <div class="message">You Chose</div>
+                
+                <div class="display">
+                    <i id="btn1"></i>
+                </div>
 
-            if(index < 1){ 
-                return "rock"
-            }
-            else if (index < 2) {
-                return "paper"
-            }
-            else {
-                return "scissors"
-            }
+            </div>
+
+            <div class="Scoreboard">
+
+                <div class="score-container">
+
+                    <div class="user">You</div> 
+                    <div class="score"> 0 - 0 </div> 
+                    <div class="comp">Comp</div>
+
+                </div>
+
+                <div class="result">Let's Play! Best of 5.</div>
+            </div>
+
+            <div class="C-choice">
+                <div class="message">Computer Chose</div>
+
+                <div class="display">
+                    <i id="btn2"></i>
+                </div>
+            </div>
+
             
-        }
+        </div>
 
-        function game() {
-            let userInput;
-            let computerChoice;
-            for (let i = 0; i < 5; i++) {
-                userInput = prompt("Enter your choice: ");
-                computerChoice = computerPlay();
-                console.log(playRound(userInput, computerChoice));
-            }
 
-            let message = "";
-            if(playerScore == computerScore) {
-                message = "Game Draw! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
-                console.log(message);
-            }
-            else if (playerScore > computerScore) {
-                message = "Player Wins! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
-                console.log(message);
-            }
-            else {
-                message = "Computer Wins! \nPlayer Score = " + playerScore + "\t Computer Score = " + computerScore;
-                console.log(message);
-            }
 
-        }
+        <div class="options">
+            <button onclick="game(this.value)" value="ROCK"><i class="fa fa-hand-fist"></i></button>
+            <button onclick="game(this.value)" value="PAPER"><i class="fa fa-hand-paper"></i></button>
+            <button onclick="game(this.value)" value="SCISSORS"><i class="fa fa-hand-scissors"></i></button>
+        </div>
 
-        game()
-    </script>
+    </div>
+
+    <div class="footer">
+        @Enthusiast18
+    </div>
     
 </body>
 </html>

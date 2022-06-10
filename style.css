@@ -1,0 +1,134 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #E5E7Eb;
+}
+
+.header{
+    text-align: center;
+    background-color: #1F2937;
+    color: white;
+    margin: 0;
+    padding: 10px 0 0 10px;
+    font-size: 25px;
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.compete {
+    font-size: 20px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: 300px;
+}
+
+.Y-choice, .C-choice{
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 0 0;
+    width: 300px;
+    height: 300px;
+    padding-top: 10px;
+    background-color: #1F2937;
+    color: white;
+    text-align: center;
+    border-radius: 7%;
+}
+
+.display {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn1, #btn2 {
+    font-size: 120px;
+    background-color:  #1F2937;
+    color: white;
+}
+
+.Scoreboard {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    padding-top: 0;
+    margin: 0;
+    width: 300px;
+    height: 200px;
+}
+
+.result {
+    text-align: center;
+}
+
+.score {
+    padding: 0 10px 0;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.options{
+    height: 200px;
+    margin: 0 0 0 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+button{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    background-color:  #1F2937;
+    color: white;
+    border-radius: 50%;
+    padding: 20px;
+    border: 2px solid #1F2937;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: white;
+    color: #1F2937;
+    border: 5px solid #1F2937;
+}
+
+button:active {
+    transform: scale(0.8);
+    box-shadow: 3px 2px 22px 1px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #1F2937;
+    color: white;
+    padding: 40px 0 40px;
+    margin: 0;
+}
